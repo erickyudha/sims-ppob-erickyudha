@@ -1,0 +1,54 @@
+.auth-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: fit-content;
+    min-height: 100vh;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.auth-left {
+    max-height: 100%;
+    padding: 15% 100px;
+    padding-bottom: 30px;
+    overflow: auto;
+
+
+    @media (max-width: 1024px) {
+        padding: 15% 10%;
+        padding-bottom: 30px;
+    }
+}
+
+.auth-right {
+    background-image: url('../assets/images/Illustrasi Login.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    height: 100%;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    h2 {
+        text-align: center;
+        margin: 0 15%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

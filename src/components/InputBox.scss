@@ -1,0 +1,54 @@
+$theme-grey-color: rgb(217, 217, 217);
+
+.input-box {
+    border: solid 2px $theme-grey-color;
+    padding: 10px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 32px auto 32px;
+    justify-items: center;
+    align-items: center;
+
+
+    svg {
+        color: $theme-grey-color;
+    }
+
+    .black {
+        color: #000;
+    }
+
+    input {
+        font-family: inherit;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        justify-self: stretch;
+
+        // Remove default styling on focus
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        // Remove default styling on active
+        &:active {
+            outline: none;
+            box-shadow: none;
+        }
+
+        // Remove default styling on hover
+        &:hover {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    span {
+        background: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
