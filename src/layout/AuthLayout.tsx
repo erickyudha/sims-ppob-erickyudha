@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import "./AuthLayout.scss";
 
 interface AuthLoginProps {
-    children: ReactNode
+    children?: ReactNode
 }
 
 export default function AuthLayout({ children }: AuthLoginProps) {

@@ -1,0 +1,47 @@
+#services {
+    display: flex;
+    justify-content: center;
+}
+
+.services-container {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    
+    a {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        color: #282828;
+        gap: 10px;
+
+        padding: 10px;
+        border-radius: 5px;
+
+        &:hover {
+            text-decoration: none;
+            background-color: #c9c9c9;
+        }
+
+        
+    }
+
+    img {
+        width: 72px;
+        height: 72px;
+    }
+
+    @media (max-width: 768px) {
+        gap: 20px;
+        font-size: 0.9em;
+
+        img {
+            height: 48px;
+            width: 48px;
+        }
+    }
+}
+

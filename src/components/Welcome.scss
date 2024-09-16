@@ -1,0 +1,63 @@
+.welcome-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    img {
+        border-radius: 50%;
+        width: 72px;
+        height: 72px;
+        border: #d3d3d3 solid 1px;
+    }
+
+    .welcome-text {
+        font-size: 1.2em;
+
+        .welcome-name {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-profile {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+
+        img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .welcome-text {
+            font-size: 0.9em;
+
+            .welcome-name {
+                font-size: 1.4em;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-profile {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 48px;
+            height: 48px;
+        }
+
+        .welcome-text {
+            font-size: 0.9em;
+
+            .welcome-name {
+                font-size: 1.2em;
+            }
+        }
+    }
+}

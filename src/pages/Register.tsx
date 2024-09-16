@@ -13,7 +13,7 @@ export default function Register() {
 
     return (
         <AuthLayout>
-            <div className="auth-container">
+            <main className="auth-container">
                 <LogoAndText />
                 <h2>Lengkapi data untuk membuat akun</h2>
                 <form action="" onSubmit={(e) => e.preventDefault()}>
@@ -25,7 +25,7 @@ export default function Register() {
                     <button>Masuk</button>
                 </form>
                 <p>sudah punya akun? login <a href="/login">di sini</a></p>
-            </div>
+            </main>
         </AuthLayout>
     )
 }

@@ -10,7 +10,7 @@ export default function Login() {
 
     return (
         <AuthLayout>
-            <div className="auth-container">
+            <main className="auth-container">
                 <LogoAndText />
                 <h2>Masuk atau buat akun untuk memulai</h2>
                 <form action="" onSubmit={(e) => e.preventDefault()}>
@@ -19,7 +19,7 @@ export default function Login() {
                     <button>Masuk</button>
                 </form>
                 <p>sudah punya akun? register <a href="/register">di sini</a></p>
-            </div>
+            </main>
         </AuthLayout>
     )
 }

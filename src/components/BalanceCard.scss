@@ -1,0 +1,73 @@
+.balance-card {
+    background-image: url("../assets/images/Background\ Saldo.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+
+    max-width: 600px;
+    width: 100%;
+
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        width: 90%;
+        padding: 15px 25px;
+    }
+
+    @media (max-width: 480px) {
+        width: 100%;
+        padding: 10px 20px;
+    }
+}
+
+.balance-text, .hide-balance-btn {
+    font-size: 1em;
+
+    @media (max-width: 1024px) {
+        font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 0.8em;
+    }
+}
+
+.balance-num {
+    font-weight: 700;
+    font-size: 2em;
+
+    @media (max-width: 1024px) {
+        font-size: 1.5em;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1em;
+    }
+}
+
+.hide-balance-btn {
+    margin-top: 5px;
+    background: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 3px 6px;
+    width: fit-content;
+    box-sizing: border-box;
+
+    @media (max-width: 1024px) {
+        padding: 2px 5px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 1px 4px;
+    }
+}
