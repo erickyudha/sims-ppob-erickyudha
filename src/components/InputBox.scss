@@ -5,9 +5,14 @@ $theme-grey-color: rgb(217, 217, 217);
     padding: 10px;
     border-radius: 5px;
     display: grid;
-    grid-template-columns: 32px auto 32px;
+    grid-template-columns: 50px auto 50px;
     justify-items: center;
     align-items: center;
+
+    font-size: 1.3em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 
 
     svg {
@@ -24,6 +29,8 @@ $theme-grey-color: rgb(217, 217, 217);
         outline: none;
         box-shadow: none;
         justify-self: stretch;
+        font-size: 0.9em;
+        box-sizing: border-box;
 
         // Remove default styling on focus
         &:focus {
@@ -42,6 +49,24 @@ $theme-grey-color: rgb(217, 217, 217);
             outline: none;
             box-shadow: none;
         }
+
+        // Hide default arrows in input type number
+        &[type=number] {
+            -moz-appearance: textfield;
+            /* Firefox */
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            /* Chrome, Safari, Edge, Opera */
+            margin: 0;
+            /* Remove margin to ensure consistency across browsers */
+        }
+
+        &:disabled {
+            color: #383838;
+        }
     }
 
     span {
@@ -50,5 +75,10 @@ $theme-grey-color: rgb(217, 217, 217);
         &:hover {
             cursor: pointer;
         }
+    }
+
+    @media (max-width: 768px) {
+        padding: 5px;
+        font-size: 1.1em;
     }
 }

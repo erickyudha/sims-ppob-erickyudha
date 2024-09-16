@@ -37,7 +37,7 @@ export default function Promotions() {
 
     return (
         <section id="promotions">
-            <h2>Temukan promo menarik</h2>
+            <div className="subtitle">Temukan promo menarik</div>
 
             <Slider className="promotions-container" {...sliderSettings}>
                 <div className="promotion-banner">

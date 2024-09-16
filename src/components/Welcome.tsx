@@ -12,8 +12,8 @@ export default function Welcome() {
         <div className="welcome-profile">
             <img src={picUrl || defaultPic} alt="profile picture" />
             <div className="welcome-text">
-                <div>Selamat datang,</div>
-                <div className="welcome-name">{name}</div>
+                <div className="subtitle">Selamat datang,</div>
+                <div className="title">{name}</div>
             </div>
         </div>
     )

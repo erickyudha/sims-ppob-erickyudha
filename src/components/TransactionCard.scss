@@ -1,0 +1,37 @@
+.transaction-card {
+    padding: 10px 20px;
+    width: 100%;
+    border: #cfcfcf solid 1px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+    }
+}
+
+.transaction-type, .transaction-time {
+    font-size: 0.8em;
+}
+
+.transaction-time {
+    color: #a2a2a2;
+}
+
+.transaction-type {
+    color: #2f2f2f;
+}
+
+.transaction-amount {
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    .right {
+        order: -1;
+    }
+}

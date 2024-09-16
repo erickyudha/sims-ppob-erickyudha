@@ -17,9 +17,9 @@ export default function BalanceCard() {
 
     return (
         <div className="balance-card">
-            <div className="balance-text">Saldo anda</div>
-            <div className="balance-num">Rp <span>{balanceHidden ? "●●●●●●●" : `${formatToIDR(balance)},-`}</span></div>
-            <button onClick={() => setBalanceHidden(!balanceHidden)} className="hide-balance-btn">
+            <div className="subtitle white">Saldo anda</div>
+            <div className="title white">Rp <span>{balanceHidden ? "●●●●●●●" : `${formatToIDR(balance)},-`}</span></div>
+            <button onClick={() => setBalanceHidden(!balanceHidden)} className="hide-balance-btn subtitle white">
                 <span>{balanceHidden ? "Lihat" : "Sembunyikan"} Saldo</span>
                 <FontAwesomeIcon icon={balanceHidden ? faEye : faEyeSlash} />
             </button>

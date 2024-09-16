@@ -1,0 +1,119 @@
+.modal-overlay {
+    background-color: rgba(#000000, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.spinner {
+    font-size: 4em;
+    color: #e8e8e8;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.modal-msg {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 50px 40px 20px 40px;
+
+    font-size: 1.3em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+
+    @media (max-width: 768px) {
+        padding: 35px 25px 10px 25px;
+        gap: 10px;
+    }
+}
+
+.modal-img {
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+
+    @media (max-width: 768px) {
+        width: 48px;
+        height: 48px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    svg {
+        width: 50%;
+        height: 50%;
+        color: #fff;
+    }
+
+    &.green-bg {
+        background-color: #52bd94;
+    }
+
+    &.red-bg {
+        background-color: #ff5630;
+    }
+}
+
+.modal-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        font-size: 0.8em;
+    }
+
+    .special-line {
+        font-weight: 700;
+        font-size: 1.3em;
+    }
+}
+
+.modal-buttons {
+    button {
+        background: none;
+        color: #515151;
+        font-size: 1em;
+        padding: 8px;
+        font-weight: 600;
+
+        @media (max-width: 768px) {
+            font-size: 0.8em;
+        }
+
+        &:hover {
+            background-color: #e4e4e4;
+        }
+    }
+
+    .proceed-btn {
+        color: #ff5630;
+    }
+
+}
