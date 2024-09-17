@@ -9,7 +9,7 @@ $theme-grey-color: rgb(217, 217, 217);
     justify-items: center;
     align-items: center;
 
-    font-size: 1.3em;
+    font-size: 1rem;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -17,6 +17,10 @@ $theme-grey-color: rgb(217, 217, 217);
 
     svg {
         color: $theme-grey-color;
+    }
+
+    .error {
+        color: rgb(244, 38, 25);
     }
 
     .black {
@@ -77,8 +81,14 @@ $theme-grey-color: rgb(217, 217, 217);
         }
     }
 
+
+
     @media (max-width: 768px) {
         padding: 5px;
-        font-size: 1.1em;
+        font-size: 0.9rem;
     }
+}
+
+.error-msg {
+    text-align: end;
 }

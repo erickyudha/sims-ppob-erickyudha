@@ -11,14 +11,19 @@
 
 .auth-left {
     max-height: 100%;
-    padding: 15% 100px;
+    padding: 15% 20%;
     padding-bottom: 30px;
     overflow: auto;
+    box-sizing: border-box;
 
 
     @media (max-width: 1024px) {
-        padding: 15% 10%;
-        padding-bottom: 30px;
+        padding: 15% 30%;
+
+    }
+
+    @media (max-width: 768px) {
+        padding: 15% 20%;
     }
 }
 
@@ -44,11 +49,18 @@
     h2 {
         text-align: center;
         margin: 0 15%;
+
+        @media (max-width: 768px) {
+            font-size: 1.25em;
+        }               
     }
 
     form {
         display: flex;
         flex-direction: column;
         gap: 20px;
+
+        box-sizing: border-box;
+        width: 100%;
     }
 }

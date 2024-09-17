@@ -5,13 +5,6 @@ import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.scss';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Home from './pages/Home';
-import Service from './pages/Service';
-import Topup from './pages/Topup';
-import Transaction from './pages/Transaction';
-import Account from './pages/Account';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -19,7 +12,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Account />
+      <App />
     </Provider>
   </React.StrictMode>
 );

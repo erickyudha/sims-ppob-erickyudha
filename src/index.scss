@@ -24,7 +24,7 @@ button {
   border-radius: 5px;
   width: 100%;
   transition: ease-in-out 0.1s;
-  font-size: 1.1em;
+  font-size: 1rem;
 
   &:hover {
     transition: ease-in-out 0.1s;
@@ -34,7 +34,7 @@ button {
 
   @media (max-width: 768px) {
     padding: 5px;
-    font-size: 1em;
+    font-size: 0.9rem;
 }
 }
 
@@ -56,7 +56,11 @@ a {
 
 p {
   color: #969696;
-  font-size: 1em;
+  font-size: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 }
 
 .title {
@@ -102,4 +106,10 @@ p {
 }
 .red {
   color: #ff5630;
+}
+.error {
+  color: rgb(244, 38, 25);
+}
+.error-border {
+  border: rgb(244, 38, 25) solid 1.5px;
 }
