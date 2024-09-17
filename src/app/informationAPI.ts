@@ -10,9 +10,12 @@ const handleResponse = async (response: Response) => {
     return response.json();
 };
 
-export const getBanners = async () => {
+export const getBanners = async (token: string) => {
     const response = await fetch(`${baseUrl}/banner`, {
         method: 'GET',
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
     });
     return handleResponse(response);
 };

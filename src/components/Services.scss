@@ -5,7 +5,7 @@
 
 .services-container {
     display: flex;
-    gap: 40px;
+    gap: 10px;
     width: 100%;
     box-sizing: border-box;
     flex-wrap: wrap;
@@ -13,6 +13,7 @@
     a {
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         align-items: center;
         color: #282828;
@@ -26,22 +27,34 @@
             background-color: #c9c9c9;
         }
 
+        div {
+            width: 100px;
+            text-align: center;
+            text-wrap: wrap;
+            font-size: 0.9em;
+
+            @media (max-width: 768px) {
+                width: 80px;
+                font-size: 0.8em;
+            }
+        }
+
         
     }
 
     img {
         width: 72px;
         height: 72px;
+
+        @media (max-width: 768px) {
+            width: 48px;
+            height: 48px;
+        }
     }
 
     @media (max-width: 768px) {
         gap: 20px;
         font-size: 0.9em;
-
-        img {
-            height: 48px;
-            width: 48px;
-        }
     }
 }
 

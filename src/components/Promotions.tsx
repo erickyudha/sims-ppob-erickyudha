@@ -1,18 +1,31 @@
-import mockBanner from "../assets/images/Banner 1.png";
-import "./Promotions.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./Promotions.scss";
+import { fetchBanners, selectBanners } from '../app/informationSlice';
+import { selectToken } from '../app/userSlice';
 
 export default function Promotions() {
+    const dispatch = useAppDispatch();
+    const banners = useAppSelector(selectBanners);
+    const token = useAppSelector(selectToken);
+
+    useEffect(() => {
+        if (token) {
+            dispatch(fetchBanners(token));
+        }
+    }, [dispatch, token]);
+
     let sliderSettings = {
         dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 2,
         autoplay: true,
-        autoplaySpeed: 8000,
+        autoplaySpeed: 5000,
         pauseOnHover: true,
         responsive: [
             {
@@ -40,29 +53,12 @@ export default function Promotions() {
             <div className="subtitle">Temukan promo menarik</div>
 
             <Slider className="promotions-container" {...sliderSettings}>
-                <div className="promotion-banner">
-                    <img src={mockBanner} alt="" />
-                </div>
-                <div className="promotion-banner">
-                    <img src={mockBanner} alt="" />
-                </div>
-                <div className="promotion-banner">
-                    <img src={mockBanner} alt="" />
-                </div>
-                <div className="promotion-banner">
-                    <img src={mockBanner} alt="" />
-                </div>
-                <div className="promotion-banner">
-                    <img src={mockBanner} alt="" />
-                </div>
-                <div className="promotion-banner">
-                    <img src={mockBanner} alt="" />
-                </div>
-                <div className="promotion-banner">
-                    <img src={mockBanner} alt="" />
-                </div>
+                {banners.map((banner) => (
+                    <div key={banner.banner_name} className="promotion-banner">
+                        <img src={banner.banner_image} alt={banner.banner_name} />
+                    </div>
+                ))}
             </Slider>
-
         </section>
-    )
+    );
 }

@@ -36,8 +36,8 @@ const initialState: InformationState = {
 
 export const fetchBanners = createAsyncThunk(
     'information/fetchBanners',
-    async () => {
-        const response = await getBanners();
+    async (token: string) => {
+        const response = await getBanners(token);
         return response;
     }
 );
