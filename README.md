@@ -1,6 +1,6 @@
 # SIMS PPOB - Erick Yudha PS
 
-This project is a create-react-app app built using React, TypeScript, and Redux. It serves as a PPOB (Payment Point Online Bank) system, providing a user-friendly interface for managing customer relationships and processing payments.
+This project is a create-react-app app built using React, TypeScript, and Redux. It serves as a PPOB (Payment Point Online Bank) system, providing a user-friendly interface for managing customer data and processing payments.
 
 ## Table of Contents
 
@@ -26,13 +26,13 @@ Make sure you have the following software installed:
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/your-username/sims-ppob.git
+    git clone https://github.com/erickyudha/sims-ppob-erickyudha.git
     ```
 
 2. **Navigate to the project directory:**
 
     ```sh
-    cd sims-ppob
+    cd sims-ppob-erickyudha
     ```
 
 3. **Install the dependencies:**
