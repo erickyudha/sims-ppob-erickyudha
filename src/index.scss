@@ -32,10 +32,16 @@ button {
     cursor: pointer;
   }
 
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
   @media (max-width: 768px) {
     padding: 5px;
     font-size: 0.9rem;
-}
+  }
 }
 
 a {
@@ -51,7 +57,7 @@ a {
     cursor: pointer;
   }
 
-  
+
 }
 
 p {
@@ -95,21 +101,27 @@ p {
 .bold {
   font-weight: 700;
 }
+
 .black {
   color: #000;
 }
+
 .white {
   color: #fff;
 }
+
 .green {
   color: #52bd94;
 }
+
 .red {
   color: #ff5630;
 }
+
 .error {
   color: rgb(244, 38, 25);
 }
+
 .error-border {
   border: rgb(244, 38, 25) solid 1.5px;
 }

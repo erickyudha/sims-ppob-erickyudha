@@ -16,7 +16,8 @@
         display: flex;
         gap: 20px;
 
-        .left, .right {
+        .left,
+        .right {
             flex-wrap: wrap;
             gap: 20px;
 
@@ -39,6 +40,7 @@
                     @media (max-width: 768px) {
                         width: calc(33.33% - 10px)
                     }
+   
                 }
             }
         }
@@ -49,14 +51,14 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            
+
             @media (max-width: 1024px) {
                 width: 60%;
             }
 
-                @media (max-width: 768px) {
-                    width: 100%;
-                }
+            @media (max-width: 768px) {
+                width: 100%;
+            }
 
             .topup-presets {
                 display: none;
