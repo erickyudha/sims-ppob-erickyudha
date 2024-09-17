@@ -5,7 +5,7 @@ import "./Topup.scss";
 import { faMoneyBill } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { selectToken } from "../app/userSlice";
-import { selectTransactionError, selectTransactionStatus, topUp } from "../app/transactionSlice";
+import { selectTransactionStatus, topUp } from "../app/transactionSlice";
 import ModalMessage from "../components/ModalMessage";
 import { useNavigate } from "react-router-dom";
 import ModalLoading from "../components/ModalLoading";
@@ -19,11 +19,11 @@ export default function Topup() {
     const token = useAppSelector(selectToken);
     const navigate = useNavigate();
     const status = useAppSelector(selectTransactionStatus);
-    const error = useAppSelector(selectTransactionError);
 
     function formatToRupiah(amount: number) {
         return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(amount);
     }
+    
 
     const handleTopup = () => {
         if (token && isAmountValid(amount)) {
