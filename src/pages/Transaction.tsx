@@ -1,17 +1,14 @@
-import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { selectToken } from "../app/userSlice";
 import TransactionCard from "../components/TransactionCard";
 import MainLayout from "../layout/MainLayout";
 import "./Transaction.scss";
-import { fetchTransactionHistory, selectTransactions, selectTransactionStatus } from "../app/transactionSlice";
+import { fetchTransactionHistory, selectTransactions } from "../app/transactionSlice";
 import { useEffect, useRef, useState } from "react";
 
 export default function Transaction() {
     const dispatch = useAppDispatch();
     const token = useAppSelector(selectToken);
-    const navigate = useNavigate();
-    const status = useAppSelector(selectTransactionStatus);
     const transactions = useAppSelector(selectTransactions);
 
     const [showAll, setShowAll] = useState(false);
@@ -56,7 +53,7 @@ export default function Transaction() {
                         ))}
                     </div>
                     {transactions.length > 5 && (
-                        <button onClick={handleToggleShowAll}>
+                        <button className="show-btn" onClick={handleToggleShowAll}>
                             {showAll ? "Show less" : "Show more"}
                         </button>
                     )}

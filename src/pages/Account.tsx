@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import "./Account.scss";
 import mockAvatar from "../assets/images/Profile Photo.png";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { updateProfileData, uploadProfilePicture, selectToken, selectUser, selectStatus } from "../app/userSlice";
+import { updateProfileData, uploadProfilePicture, selectToken, selectUser, selectStatus, logout } from "../app/userSlice";
 import ModalMessage from "../components/ModalMessage";
 import { useNavigate } from "react-router-dom";
 import ModalLoading from "../components/ModalLoading";
@@ -37,6 +37,13 @@ export default function Account() {
         }
     }, [user]);
 
+    const handleInputChange = (setter: React.Dispatch<React.SetStateAction<string>>, field: keyof typeof errors) => {
+        return (e: React.ChangeEvent<HTMLInputElement>) => {
+            setter(e.target.value);
+            setErrors((prevErrors) => ({ ...prevErrors, [field]: "" }));
+        };
+    };
+
     const handleSave = async () => {
         const newErrors = {
             email: email ? "" : "Email masih kosong",
@@ -60,15 +67,14 @@ export default function Account() {
                             })
                             .catch(err => {
                                 console.error(err);
-                            })
-                    }
-                    else {
+                            });
+                    } else {
                         setSuccess(true);
                     }
                 })
                 .catch(err => {
                     console.error(err);
-                })
+                });
         }
     };
 
@@ -119,7 +125,7 @@ export default function Account() {
                             type="email"
                             placeholder="masukkan email anda"
                             value={email}
-                            onchange={(e) => setEmail(e.target.value)}
+                            onchange={handleInputChange(setEmail, "email")}
                             logo={faAt}
                             error={errors.email}
                         />
@@ -131,7 +137,7 @@ export default function Account() {
                             type="text"
                             placeholder="nama depan"
                             value={firstName}
-                            onchange={(e) => setFirstName(e.target.value)}
+                            onchange={handleInputChange(setFirstName, "firstName")}
                             logo={faUser}
                             error={errors.firstName}
                         />
@@ -143,12 +149,13 @@ export default function Account() {
                             type="text"
                             placeholder="nama belakang"
                             value={lastName}
-                            onchange={(e) => setLastName(e.target.value)}
+                            onchange={handleInputChange(setLastName, "lastName")}
                             logo={faUser}
                             error={errors.lastName}
                         />
                     </div>
                     <button type="submit">Simpan</button>
+                    <button className="logout-btn" onClick={() => dispatch(logout())}>Logout</button>
                 </form>
             </section>
         </div>

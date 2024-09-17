@@ -76,7 +76,7 @@ export default function Register() {
                 <LogoAndText />
                 <h2>Lengkapi data untuk membuat akun</h2>
                 {status === 'loading' && <ModalLoading />}
-                {status === 'failed' && <p className="error">Gagal: {error}</p>}
+                {status === 'failed' && <p className="error">{error}</p>}
                 {complete ?
                     <ModalMessage
                         type="success"

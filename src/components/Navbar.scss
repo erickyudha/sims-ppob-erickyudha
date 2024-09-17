@@ -37,7 +37,12 @@ nav {
             text-decoration: none;
         }
     }
-
+    
+    .active {
+        color: rgb(244, 38, 25);
+        font-weight: 600;
+    }
+    
     @media (max-width: 1024px) {
         gap: 35px;
     }
@@ -46,3 +51,11 @@ nav {
         gap: 20px;
     }
 }
+
+.logo-btn {
+    &:hover {
+        color: rgb(244, 38, 25);
+        text-decoration: none;
+    }
+}
+

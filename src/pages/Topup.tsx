@@ -94,6 +94,7 @@ export default function Topup() {
                             value={amount}
                             onchange={e => setAmount(parseInt(e.target.value))}
                             logo={faMoneyBill}
+                            placeholder="Masukkan nominal top up anda"
                         />
                         <div className="topup-presets">
                             {topupPreset.map((preset) => (
