@@ -14,9 +14,10 @@ import {
   RouteObject,
   Navigate,
 } from "react-router-dom";
+import { selectUser } from "./app/userSlice";
 
 const ProtectedRoute = ({ element }: { element: React.ReactElement }) => {
-  const user = useSelector((state: RootState) => state.user.user);
+  const user = useSelector(selectUser);
   return user ? element : <Navigate to="/login" />;
 };
 
