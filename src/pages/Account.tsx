@@ -26,6 +26,7 @@ export default function Account() {
         email: "",
         firstName: "",
         lastName: "",
+        profilePic: "",
     });
     const [success, setSuccess] = useState(false);
 
@@ -44,11 +45,23 @@ export default function Account() {
         };
     };
 
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0] || null;
+        if (file && file.size > 100 * 1024) {
+            setErrors((prevErrors) => ({ ...prevErrors, profilePic: "Ukuran file maksimal 100KB" }));
+            setProfilePic(null);
+        } else {
+            setErrors((prevErrors) => ({ ...prevErrors, profilePic: "" }));
+            setProfilePic(file);
+        }
+    };
+
     const handleSave = async () => {
         const newErrors = {
             email: email ? "" : "Email masih kosong",
             firstName: firstName ? "" : "Nama depan masih kosong",
             lastName: lastName ? "" : "Nama belakang masih kosong",
+            profilePic: errors.profilePic,
         };
 
         setErrors(newErrors);
@@ -109,7 +122,7 @@ export default function Account() {
                                 type="file"
                                 name="avatar"
                                 accept="image/png, image/jpeg, image/jpg"
-                                onChange={(e) => setProfilePic(e.target.files?.[0] || null)}
+                                onChange={handleFileChange}
                             />
                             <label htmlFor="avatar">
                                 <FontAwesomeIcon icon={faPen} />
@@ -117,6 +130,7 @@ export default function Account() {
                         </div>
                         <img src={profilePic ? URL.createObjectURL(profilePic) : user?.profileImage} alt="profile picture" onError={e => e.currentTarget.src = mockAvatar} />
                     </div>
+                    {errors.profilePic && <div className="error">{errors.profilePic}</div>}
                     <div className="title">{`${user?.firstName} ${user?.lastName}`}</div>
                     <div className="input-row">
                         <label htmlFor="email">Email</label>
